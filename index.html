@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones de Estudiantes</title>
+</head>
+<body>
+    <h1>Funciones de Estudiantes</h1>
+
+    <form id="formContarCursos">
+        <label for="dniEstudiante">DNI del estudiante:</label>
+        <input type="text" id="dniEstudiante">
+        <button type="submit">Contar Cursos</button>
+        <p id="resultContarCursos"></p>
+    </form>
+
+    <form id="formEstudiantesPorCiudad">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad">
+        <button type="submit">Estudiantes por Ciudad</button>
+        <p id="resultEstudiantesPorCiudad"></p>
+    </form>
+
+    <form id="formExisteCurso">
+        <label for="nombreCurso">Nombre del curso:</label>
+        <input type="text" id="nombreCurso">
+        <button type="submit">Comprobar existencia de curso</button>
+        <p id="resultExisteCurso"></p>
+    </form>
+
+    <form id="formObtenerDireccionPorDNI">
+        <label for="dniEstudianteDireccion">DNI del estudiante:</label>
+        <input type="text" id="dniEstudianteDireccion">
+        <button type="submit">Obtener Dirección por DNI</button>
+        <p id="resultObtenerDireccionPorDNI"></p>
+    </form>
+
+    <form id="formAgregarCursosPorDNI">
+        <label for="dniEstudianteAgregar">DNI del estudiante:</label>
+        <input type="text" id="dniEstudianteAgregar">
+        <label for="cursosAgregar">Cursos a agregar (separados por coma):</label>
+        <input type="text" id="cursosAgregar">
+        <button type="submit">Agregar Cursos por DNI</button>
+        <p id="resultAgregarCursosPorDNI"></p>
+    </form>
+
+    <script src="consigna.js"></script>
+</body>
+</html>
