@@ -120,16 +120,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const formExisteCurso = document.getElementById('formExisteCurso');
     const resultExisteCurso = document.getElementById('resultExisteCurso');
-    formExisteCurs.addEventListener('submit', function(event) {
+    formExisteCurso.addEventListener('submit', function(event) {
         event.preventDefault();
         const nombreCurso = document.getElementById('nombreCurso').value;
         const result = existeCurso(nombreCurso);
-        resultExisteCurso.textContent = result ? 'El curso existe' : 'El curso no existe';
-    });
+        resultExisteCurso.textContent = result ? 'true' : 'false';
+    })
+    ;
 
     const formObtenerDireccionPorDNI = document.getElementById('formObtenerDireccionPorDNI');
     const resultObtenerDireccionPorDNI = document.getElementById('resultObtenerDireccionPorDNI');
-    formObtenerDirecci.addEventListener('submit', function(event) {
+    formObtenerDireccionPorDNI.addEventListener('submit', function(event) {
         event.preventDefault();
         const dniEstudianteDireccion = document.getElementById('dniEstudianteDireccion').value;
         const result = obtenerDireccionPorDNI(dniEstudianteDireccion);
@@ -138,4 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const formAgregarCursosPorDNI = document.getElementById('formAgregarCursosPorDNI');
     const resultAgregarCursosPorDNI = document.getElementById('resultAgregarCursosPorDNI');
+    formAgregarCursosPorDNI.addEventListener('submit', function(event){
+        event.preventDefault();
+        const dniEstudianteAgregar = document.getElementById('dniEstudianteAgregar').value;
+        const result = agregarCursosPorDNI(dniEstudianteAgregar);
+        resultAgregarCursosPorDNI.textContent = result ? '':'curso agregado con exito';
+        })
     
