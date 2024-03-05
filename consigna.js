@@ -44,6 +44,7 @@ const estudiantes = [
 
 Escribe una función llamada contarCursos que tome un nombre de estudiante como argumento y devuelva el número de cursos que está tomando ese estudiante. Si el estudiante no existe, devuelve -1.
 */
+
 /*
 
 2. Listar Estudiantes por Ciudad:
@@ -60,7 +61,22 @@ Escribe una función llamada existeCurso que tome un nombre de curso como argume
 
 Escribe una función llamada obtenerDireccion que tome el nombre de un estudiante como argumento y devuelva un objeto con la dirección completa del estudiante (calle, ciudad y país).
 */
+/*
+6
+crear una funcion que liste los estudiantes ordenados por pais de origen 
+*/
 
+function listarEstudiantesPorPais(estudiantes) {
+    const estudiantesOrdenados = estudiantes.slice().sort((a, b) => {
+      if (a.direccion.pais < b.direccion.pais) return -1;
+      if (a.direccion.pais > b.direccion.pais) return 1;
+      return 0;
+    });
+    return estudiantesOrdenados;
+  }
+  
+  const estudiantesOrdenados = listarEstudiantesPorPais(estudiantes);
+  console.log(estudiantesOrdenados);
 
 function contarCursos(dniEstudiante) {
     const estudiante = estudiantes.find(est => est.dni === dniEstudiante);
@@ -94,7 +110,6 @@ function agregarCursosPorDNI(dni, cursos) {
         console.log(`Estudiante con DNI: ${dni} no encontrado`);
     }
 }
-
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -144,5 +159,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const dniEstudianteAgregar = document.getElementById('dniEstudianteAgregar').value;
         const result = agregarCursosPorDNI(dniEstudianteAgregar);
         resultAgregarCursosPorDNI.textContent = result ? '':'curso agregado con exito';
-        })
+        });
     
+        const ListarEstudiantesPorPais = document.getElementById('ListarEstudiantesPorPais');
+        const resultadoListaEstudiantesPorPais = document.getElementById('resultadoListaEstudiantesPorPais');
+        
+        ListarEstudiantesPorPais.addEventListener('submit', function(event){
+            event.preventDefault();
+            const pais = document.getElementById('paisInput').value;
+            const result = listarEstudiantesPorPais(estudiantes, pais);
+            if (result.length > 0) {
+              resultadoListaEstudiantesPorPais.textContent = `Estudiantes en ${pais}: ${JSON.stringify(result)}`;
+            } else {
+              resultadoListaEstudiantesPorPais.textContent = `No hay estudiantes en ${pais}`;
+            }
+        });
+        
+          
+
+        
