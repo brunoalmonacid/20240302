@@ -170,9 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const result = listarEstudiantesPorPais(estudiantes, pais);
             if (result.length > 0) {
               resultadoListaEstudiantesPorPais.textContent = `Estudiantes en ${pais}: ${JSON.stringify(result)}`;
-            } else {
-              resultadoListaEstudiantesPorPais.textContent = `No hay estudiantes en ${pais}`;
-            }
+            } 
         });
         
           
