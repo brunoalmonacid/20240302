@@ -98,9 +98,9 @@ function agregarCursosPorDNI(dni, cursos) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const formContarCursos = document.getElementById('formContarCursos');
+    const ContarCursos = document.getElementById('ContarCursos');
     const resultContarCursos = document.getElementById('resultContarCursos');
-    formContarCursos.addEventListener('submit', function(event) {
+    ContarCursos.addEventListener('submit', function(event) {
         event.preventDefault();
         const dniEstudiante = document.getElementById('dniEstudiante').value;
         const result = contarCursos(dniEstudiante);
@@ -109,18 +109,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
    
 
-    const formEstudiantesPorCiudad = document.getElementById('formEstudiantesPorCiudad');
+    const EstudiantesPorCiudad = document.getElementById('EstudiantesPorCiudad');
     const resultEstudiantesPorCiudad = document.getElementById('resultEstudiantesPorCiudad');
-    formEstudiantesPorCiudad.addEventListener('submit', function(event) {
+    EstudiantesPorCiudad.addEventListener('submit', function(event) {
         event.preventDefault();
         const ciudad = document.getElementById('ciudad').value;
         const result = estudiantesPorCiudad(ciudad);
         resultEstudiantesPorCiudad.textContent = `Estudiantes en la ciudad: ${result.join(', ')}`;
     });
 
-    const formExisteCurso = document.getElementById('formExisteCurso');
+    const ExisteCurso = document.getElementById('ExisteCurso');
     const resultExisteCurso = document.getElementById('resultExisteCurso');
-    formExisteCurso.addEventListener('submit', function(event) {
+    ExisteCurso.addEventListener('submit', function(event) {
         event.preventDefault();
         const nombreCurso = document.getElementById('nombreCurso').value;
         const result = existeCurso(nombreCurso);
@@ -128,18 +128,18 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     ;
 
-    const formObtenerDireccionPorDNI = document.getElementById('formObtenerDireccionPorDNI');
+    const ObtenerDireccionPorDNI = document.getElementById('ObtenerDireccionPorDNI');
     const resultObtenerDireccionPorDNI = document.getElementById('resultObtenerDireccionPorDNI');
-    formObtenerDireccionPorDNI.addEventListener('submit', function(event) {
+    ObtenerDireccionPorDNI.addEventListener('submit', function(event) {
         event.preventDefault();
         const dniEstudianteDireccion = document.getElementById('dniEstudianteDireccion').value;
         const result = obtenerDireccionPorDNI(dniEstudianteDireccion);
         resultObtenerDireccionPorDNI.textContent = result ? `Dirección: ${JSON.stringify(result)}` : 'Estudiante no encontrado';
     });
 
-    const formAgregarCursosPorDNI = document.getElementById('formAgregarCursosPorDNI');
+    const AgregarCursosPorDNI = document.getElementById('AgregarCursosPorDNI');
     const resultAgregarCursosPorDNI = document.getElementById('resultAgregarCursosPorDNI');
-    formAgregarCursosPorDNI.addEventListener('submit', function(event){
+    AgregarCursosPorDNI.addEventListener('submit', function(event){
         event.preventDefault();
         const dniEstudianteAgregar = document.getElementById('dniEstudianteAgregar').value;
         const result = agregarCursosPorDNI(dniEstudianteAgregar);
