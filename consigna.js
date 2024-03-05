@@ -63,7 +63,7 @@ Escribe una función llamada obtenerDireccion que tome el nombre de un estudiant
 
 
 function contarCursos(dniEstudiante) {
-    const estudiante = estudiantes.find(estudiante => estudiante.dni === dniEstudiante);
+    const estudiante = estudiantes.find(est => est.dni === dniEstudiante);
     return estudiante ? estudiante.cursos.length : -1;
 }
 console.log(contarCursos('12345678'))
